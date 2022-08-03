@@ -1,13 +1,22 @@
 package com.manifestcorp.Techreads;
 
+import com.manifestcorp.Techreads.controller.IndexController;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
 class TechReadsApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
 
+	@Autowired
+	private IndexController controller;
+
+	@Test
+	public void contextLoads() throws Exception {
+		assertThat(controller).isNotNull();
+	}
 }
+
